@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Hello GestionAtelierController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>{{ data }}! ✅</h1>
+
+    <table style="border:#000 1px solid; border-collapse:collapse; text-align:center;">
+        
+            <tr>
+                <td>Numéro</td>
+                <td>Date d'enregistrement</td>
+                <td>Date et heure prévue</td>
+                <td>Durée</td>
+                <td>Nombre de places</td>
+                <td>Thème</td>
+            </tr>
+
+            {%for i in ateliers%}
+                <tr style="border:#000 1px solid; border-collapse:collapse; text-align:center">
+                    <td>{{i['numero']}}</td>
+                    <td>{{i['date_enregistrement']}}</td>
+                    <td>{{i['date_et_heure_prevue']}}</td>
+                    <td>{{i['duree']}}</td>
+                    <td>{{i['nb_places']}}</td>
+                    <td>{{i['theme']}}</td>
+                </tr>
+            {%endfor%}
+    </table>
+
+
+
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ '/var/www/html/suivateliers/src/Controller/GestionAtelierController.php'|file_link(0) }}">src/Controller/GestionAtelierController.php</a></code></li>
+        <li>Your template at <code><a href="{{ '/var/www/html/suivateliers/templates/gestion_atelier/index.html.twig'|file_link(0) }}">templates/gestion_atelier/index.html.twig</a></code></li>
+    </ul>
+</div>
+{% endblock %}
